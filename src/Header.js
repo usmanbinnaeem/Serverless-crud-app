@@ -1,21 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
 
 const Header = () => (
   <nav className="App-nav">
     <h1>
-      <a href="index.html">ReactApp</a>
+      <Link to="/">ReactApp</Link>
     </h1>
     <ul>
-      <a href="index.html">
+      <Link to="/">
         <li>Home</li>
-      </a>
-      <a href="/#">
+      </Link>
+      <Link to="/room">
         <li>About</li>
-      </a>
-      <a href="/#">
-        <li>Contact</li>
-      </a>
+      </Link>
     </ul>
   </nav>
 );

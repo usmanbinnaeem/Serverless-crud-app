@@ -20,38 +20,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-img {
-  width: 200px;
-}
-
-nav ul {
-  list-style: none;
-}
-.App-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #4c4c4c;
-  padding: 0.7rem 2rem;
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  top: 0;
-}
-nav ul {
-  display: flex;
-}
-a {
-  text-decoration: none;
-  color: #fff;
-  padding: 0.45rem;
-  margin: 0 0.25rem;
-}
-
-a:hover {
-  color: #ccc2c2;
-}
-
-#main-body {
-  margin-top: 70px;
-}
