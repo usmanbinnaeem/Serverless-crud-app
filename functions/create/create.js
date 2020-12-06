@@ -11,15 +11,13 @@ exports.handler = async (event, context) => {
   try {
     var client = new faunadb.Client({ secret: process.env.FAUNADB_ADMIN_KEY });
     var note = JSON.parse(event.body);
-    console.log(note, "note reached to server");
     var result = await client.query(
       q.Create(q.Collection("notes"), {
         data: {
-          note
+          note,
         },
       })
     );
-    console.log("Document added Database: " + JSON.stringify(result));
     return {
       statusCode: 200,
       body: JSON.stringify(result),

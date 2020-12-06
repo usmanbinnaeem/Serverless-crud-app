@@ -11,7 +11,6 @@ exports.handler = async (event, context) => {
     }
     var client = new faunadb.Client({ secret: process.env.FAUNADB_ADMIN_KEY });
     var { id, note } = JSON.parse(event.body)
-    console.log(note, "note")
     var result = await client.query(
       q.Update(q.Ref(q.Collection('notes'), id), {
         data: {
@@ -19,7 +18,6 @@ exports.handler = async (event, context) => {
         },
       })
     );
-    console.log("Document added Database: " + JSON.stringify(result));
     return {
       statusCode: 200,
       body: JSON.stringify(result),

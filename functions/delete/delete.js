@@ -6,11 +6,9 @@ exports.handler = async (event, context) => {
   if (event.httpMethod !== "POST") {
         return { statusCode: 405, body: "Method Not Allowed" };
     }
-  console.log(event.body)
   try {
     var client = new faunadb.Client({ secret: process.env.FAUNADB_ADMIN_KEY });
     var id = JSON.parse(event.body)
-    console.log(id, "id")
     var result = await client.query(q.Delete(q.Ref(q.Collection('notes'), id)));
 
     return {
