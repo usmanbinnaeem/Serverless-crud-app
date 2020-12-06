@@ -6,11 +6,10 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { createStyles, Theme } from "@material-ui/core/styles";
+import { createStyles } from "@material-ui/core/styles";
 import NoteList from "./NoteList";
-import styles from "./NoteForm.module.css";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       width: "60%",
@@ -26,9 +25,9 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function NoteForm() {
   const classes = useStyles();
-  const [data, setData] = useState<any>([]);
-  const [notee, setNotee] = useState<string>("");
-  const [input, setInput] = useState<string>("");
+  const [data, setData] = useState([]);
+  const [notee, setNotee] = useState("");
+  const [input, setInput] = useState("");
 
   useEffect(() => {
     (async () => {
