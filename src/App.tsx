@@ -1,11 +1,8 @@
-import React from 'react';
+import React from "react";
 import NoteForm from "./Components/NoteForm";
 
-
-function App() {
-  return (
-<NoteForm />
-  )
+const App = () => {
+  return <NoteForm />;
 }
 
 export default App;

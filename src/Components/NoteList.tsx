@@ -9,18 +9,18 @@ interface Props {
     id: string,
     key: string,
     deleteNote : (id : string) => void,
-    updateNote : (id: string, completed: boolean) => void,
+    updateNote : (id: string) => void,
     input: string,
     message: string
 }
 
 function NoteList({ key, id, message,  deleteNote,updateNote, input}: Props) {
   return (
-    <>
+    
       <ul className={styles.list} key={key}>
         <li>
           <div className={styles.title}>
-            <h3>{message} </h3>
+            <h3>{JSON.stringify(message)} </h3>
           </div>
 
           <div>
@@ -33,7 +33,7 @@ function NoteList({ key, id, message,  deleteNote,updateNote, input}: Props) {
           </div>
         </li>
       </ul>
-    </>
+    
   );
 }
 

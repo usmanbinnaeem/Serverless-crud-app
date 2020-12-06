@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { createStyles, Theme } from "@material-ui/core/styles";
 import NoteList from "./NoteList";
+import styles from "./NoteForm.module.css";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const NoteForm: React.FC<any> = ({ submit, setFormValues, prevValues }) => {
+function NoteForm() {
   const classes = useStyles();
   const [data, setData] = useState<any>([]);
   const [notee, setNotee] = useState<string>("");
@@ -89,11 +90,19 @@ const NoteForm: React.FC<any> = ({ submit, setFormValues, prevValues }) => {
       <div>
         <form>
           <input
+            style={{
+              width: "50%",
+              padding: "12px 20px",
+              margin: "1rem 0",
+              boxSizing: "border-box",
+              border: "1px solid #555",
+              outline: "none",
+            }}
             value={input}
             onChange={(e) => setInput(e.target.value)}
           ></input>
 
-          <Button onClick={() => createNote(input)}>Add Note</Button>
+          <Button variant="contained" color="primary"  style = {{margin: "10px"}} onClick={() => createNote(input)}>Add Note</Button>
         </form>
 
         <Accordion>
@@ -103,7 +112,7 @@ const NoteForm: React.FC<any> = ({ submit, setFormValues, prevValues }) => {
             id="panel1a-header"
           >
             <Typography className={classes.heading}>
-              <h2>Notes List</h2>
+              Notes List
             </Typography>
           </AccordionSummary>
           <AccordionDetails style={{ display: "block" }}>
@@ -122,6 +131,6 @@ const NoteForm: React.FC<any> = ({ submit, setFormValues, prevValues }) => {
       </div>
     </div>
   );
-};
+}
 
 export default NoteForm;
